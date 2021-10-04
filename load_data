@@ -1,0 +1,5 @@
+LOAD DATA LOCAL INFILE 'folder_name/file_name.tsv'
+INTO TABLE `table_name`
+FIELDS TERMINATED BY '\t' ENCLOSED BY ''
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
