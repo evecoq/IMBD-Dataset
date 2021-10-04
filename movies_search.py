@@ -3,16 +3,13 @@ from sqlalchemy import create_engine
 import pymysql.cursors
 import config
 
-connection = pymysql.connect(host = '127.0.0.1',
+connection = pymysql.connect(host = config.host,
                              user = config.user,
                              password = config.password,
-                             db = 'bdd_ecoquelet')
+                             db = config.database)
 
-server = "127.0.0.1" # : Si connection SSH avec tunnel port 3306 à partir d'internet
-# datalab-mame.myconnectech.fr : Si sur réseau local
-# server = "datalab-mame.myconnectech.fr" 
-# BDname="grp_movies3"
-BDname="bdd_ecoquelet"
+server = "server"
+BDname="database"
 
 cnx = create_engine('mysql+pymysql://' + config.user + ':' + config.password + '@' + server + '/' + BDname).connect()
 
